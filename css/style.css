@@ -1,0 +1,648 @@
+@font-face {
+  font-family: "Popins-Regular";
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Popins-Semibold";
+  src: url(../fonts/Poppins-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Popins-Bold";
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Alishia-Mekayla";
+  src: url(../fonts/Alishia-Mekayla.otf);
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url(../fonts/Roboto-Bold.ttf);
+}
+* {
+  font-family: "Popins-Regular";
+  margin: 0;
+  padding: 0;
+}
+
+.hLink {
+  text-decoration: none;
+  color: black;
+}
+.hLink:hover {
+  text-decoration: underline;
+}
+
+#whatsappIcon {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 999;
+}
+#whatsappIcon img {
+  width: 60px;
+}
+
+.max-content-width {
+  width: 1366px;
+  max-width: 100%;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.poppinsBold {
+  font-family: "Popins-Bold";
+}
+
+#banner-section {
+  background-image: url(../images/heroBanner.png);
+  width: 100%;
+  height: 700px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 3rem;
+}
+#banner-section .content {
+  position: absolute;
+  top: 70%;
+  left: 18%;
+  transform: translate(-18%, -70%);
+  width: 80%;
+  max-width: 100%;
+  color: white;
+}
+#banner-section .content .title {
+  font-size: 5.5rem;
+  font-family: "Popins-Bold";
+  width: 75%;
+}
+#banner-section .content .subTitle {
+  font-size: 1.875rem;
+  line-height: 2.75rem;
+}
+
+.hideDesk {
+  display: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 1rem 3rem;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+header .headerMain {
+  display: flex;
+  justify-content: space-between;
+}
+header .headerMain .logo-container {
+  display: flex;
+  align-items: center;
+}
+header .headerMain .logo-container img {
+  width: 150px;
+}
+header .headerMain .logo-container img.blueLogo {
+  display: none;
+}
+header .headerMain .logo-container .logoSession {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 1rem;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+header .headerMain .logo-container .logoSession::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 1px;
+  height: 50px;
+  transform: translateY(-50%);
+  background-color: #707070;
+}
+header .headerMain .top-nav {
+  display: flex;
+  align-items: center;
+}
+header .headerMain .top-nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+header .headerMain .top-nav ul li {
+  margin: 0 1.5rem;
+}
+header .headerMain .top-nav ul li a {
+  font-family: "Popins-Bold";
+  color: white;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 0.5rem;
+}
+header .headerMain .top-nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #0abeb2;
+  transform: scale(0);
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+header .headerMain .top-nav ul li a:hover::before {
+  transform: scale(1);
+}
+header.grayBG {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.0509803922);
+}
+header.grayBG .logo-container img.whiteLogo {
+  display: none;
+}
+header.grayBG .logo-container img.blueLogo {
+  display: inline-block;
+}
+header.grayBG .top-nav ul li a {
+  color: black;
+}
+header .burger {
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  position: fixed;
+  top: 31px;
+  right: 45px;
+  z-index: 99;
+}
+header .burger span {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .burger span,
+header .burger span::before,
+header .burger span::after {
+  display: block;
+  width: 30px;
+  border-radius: 4px;
+  height: 2px;
+  background-color: black;
+  outline: 1px solid transparent;
+  transition-property: background-color, transform;
+  transition-duration: 0.3s;
+}
+header .burger span::before,
+header .burger span::after {
+  position: absolute;
+  content: "";
+  top: 7px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header .burger span::before {
+  top: -7px;
+}
+header .burger.clicked span {
+  background-color: transparent;
+  transform: translate(-15px, -2px);
+}
+header .burger.clicked span::after {
+  transform: rotate(135deg);
+  top: 2px;
+  width: 80%;
+}
+header .burger.clicked span::before {
+  transform: rotate(45deg);
+  top: 2px;
+  width: 80%;
+}
+header nav.csr-nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+header nav.csr-nav.show {
+  visibility: visible;
+  opacity: 1;
+}
+header nav.csr-nav .csr-nav-menu {
+  position: absolute;
+  top: 0px;
+  right: -400px;
+  padding: 30px;
+  padding-top: 10%;
+  height: 100%;
+  overflow: auto;
+  width: 400px;
+  max-width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transition: all 0.5s ease-out;
+}
+header nav.csr-nav .csr-nav-menu.show {
+  right: 0px;
+}
+header nav.csr-nav .csr-nav-menu ul {
+  list-style: none;
+}
+header nav.csr-nav .csr-nav-menu ul li {
+  display: flex;
+  justify-content: center;
+}
+header nav.csr-nav .csr-nav-menu ul li a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  padding: 2rem 0rem 0.5rem;
+  font-size: 1.8rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+header nav.csr-nav .csr-nav-menu ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #0abeb2;
+  transform: scale(0);
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+header nav.csr-nav .csr-nav-menu ul li a:hover::before {
+  transform: scale(1);
+}
+header nav.csr-nav .csr-nav-menu ul li a img {
+  width: 35px;
+}
+
+.about-us {
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem 0 3rem;
+}
+.about-us .entrep-image {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+}
+.about-us .entrep-image img {
+  width: 90%;
+}
+.about-us .entrep-description {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-us .entrep-description .title {
+  color: rgb(1, 134, 137);
+  font-family: "Alishia-Mekayla";
+}
+.about-us .entrep-description .content {
+  line-height: 1.8rem;
+  width: 86%;
+  font-size: 1.125rem;
+}
+
+.why-choose {
+  padding-top: 5rem;
+}
+.why-choose .wc-container {
+  border: 1px solid #707070;
+}
+.why-choose .wc-container .section-img img {
+  width: 100%;
+}
+.why-choose .wc-container .section-description ul {
+  padding: 3rem 6rem;
+}
+.why-choose .wc-container .section-description ul li {
+  font-size: 1.75rem;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 3rem;
+}
+
+.weDo {
+  padding-top: 8rem;
+}
+.weDo .title {
+  font-family: "Alishia-Mekayla";
+  font-size: 2.25rem;
+  text-align: center;
+}
+.weDo .description {
+  font-size: 1.25rem;
+}
+.weDo .img-sec {
+  padding: 0 2rem;
+}
+.weDo .img-sec img {
+  width: 100%;
+}
+
+.imds {
+  margin-top: 6rem;
+}
+.imds .img-sec img {
+  width: 100%;
+}
+.imds .section-description {
+  font-size: 1.75rem;
+  padding: 1.5rem 0;
+}
+
+.accord {
+  padding-top: 3rem;
+}
+.accord .accHeader {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+.accord .accHeader::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: -4px;
+  width: 96%;
+  height: 1px;
+  border-radius: 4px;
+  background-color: #c3c3c3;
+}
+.accord .accHeader .hdrChild {
+  padding: 0 1rem;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+.accord .accHeader .hdrChild.show::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #018689;
+  z-index: 1;
+}
+.accord .accBody {
+  margin-top: 1rem;
+}
+.accord .accBody .accChild {
+  display: none;
+  padding: 3rem;
+  background-color: #f7f7f7;
+}
+.accord .accBody .accChild .img-sec {
+  flex: 1;
+}
+.accord .accBody .accChild .img-sec img {
+  width: 100%;
+}
+.accord .accBody .accChild .content {
+  flex: 3;
+  padding-left: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.accord .accBody .accChild .content .title {
+  font-size: 3rem;
+  font-family: "Alishia-Mekayla";
+}
+.accord .accBody .accChild .content .description {
+  font-size: 1.5rem;
+}
+.accord .accBody .accChild.show {
+  display: flex;
+}
+
+.localGlobal {
+  margin-top: 6rem;
+  padding: 4rem;
+  background-image: url(../images/localGlobal.png);
+  text-align: center;
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.localGlobal .title {
+  font-size: 3.5rem;
+  font-family: "Roboto-Bold";
+}
+.localGlobal .subTitle {
+  font-size: 2rem;
+}
+
+footer#contact-info {
+  position: relative;
+  padding: 3rem;
+  background-color: #f7f7f7;
+  margin-top: 5rem;
+}
+footer#contact-info .ciContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+footer#contact-info .ciContainer .logo-container img {
+  width: 350px;
+}
+footer#contact-info .ciContainer .contact-info {
+  text-align: right;
+}
+footer#contact-info .ciContainer .contact-info h3 {
+  margin-bottom: 0;
+}
+footer#contact-info .ciContainer .contact-info h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+footer#contact-info .ciContainer .contact-info h3 a:hover {
+  text-decoration: underline;
+}
+
+.home-page #header .burger {
+  display: none;
+}
+
+.sessionPage #banner-section {
+  background-image: url(../images/serviceBanner.png);
+}
+.sessionPage #serviceFooter {
+  background-color: #018689;
+  margin-top: 6rem;
+}
+.sessionPage #serviceFooter .containr {
+  display: flex;
+  padding: 4rem 0 3rem;
+  align-items: center;
+}
+.sessionPage #serviceFooter .containr .description {
+  width: 50%;
+  color: white;
+  padding-right: 5%;
+  position: relative;
+}
+.sessionPage #serviceFooter .containr .description .title {
+  font-family: "Roboto-Bold";
+  font-size: 4.5rem;
+}
+.sessionPage #serviceFooter .containr .description .sub {
+  font-size: 2rem;
+}
+.sessionPage #serviceFooter .containr .description::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  width: 1px;
+  height: 70%;
+  transform: translateY(-50%);
+  background-color: white;
+}
+.sessionPage #serviceFooter .containr .logo-container {
+  width: 50%;
+  padding-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sessionPage #serviceFooter .containr .logo-container img {
+  width: 600px;
+  max-width: 100%;
+}
+.sessionPage #serviceFooter .containr .logo-container .reachout {
+  background: white;
+  color: #018689;
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+.sessionPage #serviceFooter .containr .logo-container .reachout a {
+  text-decoration: none;
+  color: inherit;
+}
+.sessionPage #serviceFooter .containr .logo-container .reachout a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1024px) {
+  header .headerMain .top-nav ul li {
+    margin: 0 1rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .mobHide {
+    display: none;
+  }
+  .hideDesk {
+    display: block;
+  }
+  header {
+    padding: 0.5rem 1rem;
+  }
+  header .headerMain .top-nav.mobHide {
+    display: none;
+  }
+  header .headerMain .top-nav ul.mobHide {
+    display: none;
+  }
+  header .headerMain .logo-container .logoSession {
+    letter-spacing: 0.25rem;
+    font-size: 0.85rem;
+    padding-left: 0.75rem;
+  }
+  header .headerMain .logo-container .logoSession::before {
+    height: 35px;
+  }
+  header .headerMain .logo-container img {
+    width: 100px;
+  }
+  header .burger {
+    top: 20px;
+    right: 20px;
+  }
+  #banner-section {
+    height: 700px !important;
+  }
+  .about-us {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 2rem;
+  }
+  .about-us .entrep-image {
+    width: 100%;
+  }
+  .about-us .entrep-description {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  footer#contact-info {
+    flex-direction: column;
+    padding: 5rem 2rem 3rem;
+  }
+  footer#contact-info .logo-container {
+    padding-bottom: 2rem;
+  }
+  footer#contact-info .logo-container img {
+    width: 88%;
+    max-width: 350px;
+  }
+  footer#contact-info .logo-container::after {
+    top: unset;
+    bottom: 0;
+    right: unset;
+    left: 50%;
+    width: 70%;
+    height: 1px;
+    transform: translateX(-50%);
+  }
+  footer#contact-info .contact-info {
+    padding-top: 2rem;
+  }
+  footer#contact-info .contact-info .whatsappInfo img {
+    width: 30px;
+  }
+  .home-page #header .burger {
+    display: block;
+    top: 20px;
+    right: 20px;
+  }
+  .home-page #header nav.csr-nav .csr-nav-menu {
+    padding-top: 10rem;
+  }
+  .home-page #header nav.csr-nav .csr-nav-menu ul li a {
+    font-size: 1.5rem;
+  }
+}/*# sourceMappingURL=style.css.map */
