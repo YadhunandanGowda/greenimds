@@ -57,6 +57,21 @@
   font-family: "Popins-Bold";
 }
 
+.getInTouch {
+  text-decoration: none;
+  color: white;
+  font-size: 1.125rem;
+  border: 5px solid #0abeb2;
+  padding: 0.5rem 1rem;
+  border-radius: 26px;
+  font-family: "Popins-Bold";
+  transition: all 0.3s ease;
+}
+.getInTouch:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
 #banner-section {
   background-image: url(../images/heroBanner.png);
   width: 100%;
@@ -178,6 +193,9 @@ header.grayBG .logo-container img.blueLogo {
   display: inline-block;
 }
 header.grayBG .top-nav ul li a {
+  color: black;
+}
+header.grayBG .top-nav .getInTouch {
   color: black;
 }
 header .burger {
